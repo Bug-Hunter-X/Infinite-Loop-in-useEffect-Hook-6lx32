@@ -1,0 +1,21 @@
+```javascript
+function MyComponent() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    // Correct logic: Only run effect once on mount
+    console.log('Effect ran');
+  }, []); // Empty dependency array
+
+  const incrementCount = () => {
+    setCount(prevCount => prevCount + 1);
+  };
+
+  return (
+    <div>
+      <p>Count: {count}</p>
+      <button onClick={incrementCount}>Increment</button>
+    </div>
+  );
+}
+```
